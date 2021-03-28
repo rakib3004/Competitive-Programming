@@ -11,7 +11,7 @@ cin>>m>>n;
 int i,j;
 int q = m*n;
 
-if(m==1||n==1){
+if(m==1||n==1||q==4){
     cout<<q;
 }
 else {
