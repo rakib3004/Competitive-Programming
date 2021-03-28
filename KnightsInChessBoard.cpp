@@ -30,6 +30,7 @@ cin>>t;
 int count=1;
 while(t--){
 cout<<"Case "<<count<<": ";
+count++;
     test();
     cout<<endl;
 }
