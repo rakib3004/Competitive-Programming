@@ -9,12 +9,17 @@ int m,n;
 cin>>m>>n;
 
 int i,j;
+int q = m*n;
 
-
-for(i=1;i<m)
+if(m==1||n==1){
+    cout<<q;
+}
+else {
+    cout<<(q/2)+(q%2);
+}
+return;
 
 }
-
 int main(){
 
 
@@ -22,10 +27,11 @@ int t;
 
 cin>>t;
 
-
+int count=1;
 while(t--){
-
+cout<<"Case "<<count<<": ";
     test();
+    cout<<endl;
 }
 
 
