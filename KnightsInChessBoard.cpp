@@ -24,6 +24,7 @@ void test()
     else if(m==2||n==2)
     {
         int p =q/2;
+            q=q/2;
         if(q%4==0)
         {
             cout<<p;
