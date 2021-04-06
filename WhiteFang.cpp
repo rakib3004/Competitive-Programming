@@ -44,11 +44,11 @@ int main()
                 int x,y;
                 int a=i,b=j;
 
-                for(x=a-1; x<=x+1; x++)
+                for(x=a-1; x<=a+1; x++)
                 {
                     for(y=b-1; y<=b+1; y++)
                     {
-                        if(cell[x][y]=='W')
+                        if(cell[x][y]=='W'&&(abs(x-y)==1))
                         {
                             cout<<"No"<<endl;
                             return 0;
