@@ -49,21 +49,53 @@ void test()
     int m=a.size();
     int nB= b.size();
 
-    Compute_Prefix_Function(b);
 
 
-
-    int i;
+    int i,j;
     int k=0;
+    int c=0;
+    int t=0;
+    int ans=0;
 
-    for(i=1; i<nB; i++)
-
+    for(i=0; i<m-nB; i++)
     {
 
+        k=i;
+        for(j=0; j<nB; j++)
+        {
+
+            if(a[k]==b[0])
+            {
+                t=k;
+            }
+
+            if(a[k]==b[j])
+            {
+                c++;
+                k++;
+            }
+            else
+            {
+                i=t;
+                c=0;
+                break;
+            }
+
+            if(c==nB)
+            {
+                ans++;
+                c=0;
+                i=t;
+                break;
+            }
+
+        }
 
 
 
     }
+
+    cout<<ans<<endl;
 
     return;
 
