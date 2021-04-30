@@ -24,7 +24,7 @@ for(i=1;i<n;i++){
 
     cin>>a[i];
     d[i-1] = a[i]-a[i-1];
-      cout<<rrr.insert({d[i-1],max(0,rrr.at(d[i-1])+1)})<<endl;
+  //    cout<<rrr.insert({d[i-1],max(0,rrr.at(d[i-1])+1)})<<endl;
 
 
 }
