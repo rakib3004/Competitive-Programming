@@ -52,9 +52,17 @@ class Student{
            string fname=get_first_name();
             int a=get_age();
             int s=get_standard();
+            stringstream age0;
+            stringstream standard0;
+            string _age;
+            string _standard;
+            age0<<a;
+            age0>>_age;
 
+            standard0<<s;
+            standard0>>_standard;
 
-        return +","+lname+","+fname+","+get_standard();
+        return _age+","+fname+","+lname+","+_standard;
         }
 
 
