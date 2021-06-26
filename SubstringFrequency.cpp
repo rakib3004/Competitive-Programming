@@ -2,101 +2,44 @@
 using namespace std;
 int n[1000];
 
-void Compute_Prefix_Function(string p)
-{
-
-    n[0]=1;
-
-    int m=p.size();
-
-    int k=0;
-    int i;
-
-    cout<<"i k n[k]"<<endl;
-
-    for(i=0; i<m; i++)
-    {
-
-        do
-        {
-            k=n[k];
-        }
-        while (k>0&&p[k+1]!=p[i]);
-
-        if(p[k+1]==p[i])
-        {
-            k++;
-        }
-        n[i]=k;
-
-        cout<<i<<" "<<k<<" "<<n[i]<<endl;
-
-    }
-
-    return ;
-
-}
+int var=0;
 
 
 void test()
 {
+    var++;
 
     string a,b;
 
     cin>>a>>b;
 
 
-    int m=a.size();
-    int nB= b.size();
+    int n=a.size();
+    int m= b.size();
 
-
+int counter=0;
 
     int i,j;
-    int k=0;
-    int c=0;
-    int t=0;
-    int ans=0;
 
-    for(i=0; i<m-nB; i++)
-    {
+    for(i=0;i<=n-m;i++){
 
-        k=i;
-        for(j=0; j<nB; j++)
-        {
 
-            if(a[k]==b[0])
-            {
-                t=k;
-            }
+        for(j=0;j<m;j++){
 
-            if(a[k]==b[j])
-            {
-                c++;
-                k++;
-            }
-            else
-            {
-                i=t;
-                c=0;
+            if(a[i+j]!=b[j]){
                 break;
             }
 
-            if(c==nB)
-            {
-                ans++;
-                c=0;
-                i=t;
-                break;
-            }
 
         }
-
-
+        if(j==m){
+            counter++;
+            //i=i+j-1;
+            j=0;
+        }
 
     }
-
-    cout<<ans<<endl;
-
+cout<<"Case "<<var<<": "<<counter<<endl;
     return;
 
 }
