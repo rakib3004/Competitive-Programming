@@ -34,7 +34,7 @@ int counter=0;
         }
         if(j==m){
             counter++;
-            //i=i+j-1;
+          i=i+1;
             j=0;
         }
 
