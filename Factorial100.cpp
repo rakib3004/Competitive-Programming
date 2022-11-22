@@ -4,38 +4,62 @@ using namespace std;
 
 void test()
 {
-int n;
+    int n;
 
 
-cin>>n;
+    cin>>n;
 
-int two=0;
-int five =0;
-int i;
 
-for(i=1;i<=n;i++){
-    if(i%25==0){
-        five++;
-        five++;
+    string names[n];
+
+    bool impossible=true;
+    int i,j;
+
+    int startAscii=97;
+    int finishAscii=122;
+
+    for(i=0; i<n; i++)
+    {
+        cin>>names[i];
 
     }
-    else if(i%10==0){
-        five++;
-        two++;
+    int count[26]= {0};
+
+
+
+    for(i=startAscii; i<=finishAscii; i++)
+    {
+
+
+        for(j=0; j<n; j++)
+        {
+            if(names[j][0]==char(i))
+            {
+                count[i-startAscii]++;
+            }
+        }
+
+
+        if(count[i-startAscii]>=3)
+        {
+             impossible=false;
+
+            cout<<char(i);
+        }
 
     }
-    else if(i%2==0){
-        two++;
+
+    if(impossible==true){
+        cout<<"impossible"<<endl;
     }
-    else if(i%5==0){
-        five++;
-    }
+
+
+
+    return;
+
 
 }
 
-cout<<min(two,five)<<endl;
-return;
-}
 
 
 int main()
@@ -48,6 +72,12 @@ int main()
     while(t--)
     {
         test();
+
+        if(t!=0){
+            cout<<endl;
+
+        }
+
     }
 
 
