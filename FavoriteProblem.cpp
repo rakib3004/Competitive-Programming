@@ -4,13 +4,26 @@ using namespace std;
 
 void test()
 {
-int a[3]={0};
+int n;
 
-cin>>a[0]>>a[1]>>a[2];
+cin>>n;
 
-sort(a,a+3);
 
-cout<<a[1]<<endl;
+string s;
+
+cin>>s;
+
+
+int i;
+
+int maxChar=-1;
+
+
+for(i=0;i<n;i++){
+
+maxChar=max(maxChar,s[i]-'a'+1);
+}
+cout<<maxChar<<endl;
 
     return;
 
