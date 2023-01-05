@@ -5,17 +5,14 @@ using namespace std;
 void test()
 {
 
- long long int n,m;
+ int n,m;
 
- cin>>n>>m;
+ int a[n]={0};
 
-
- long long int a[n]={0};
-
- long long int b[m]={0};
+ int b[m]={0};
 
 
- long long int i,j;
+ int i,j;
 
  for(i=0;i<n;i++){
     cin>>a[i];
@@ -25,33 +22,28 @@ void test()
     cin>>b[j];
  }
 
- long long int sum=0;
+ int sum=0;
 
-  sort(a, a + n, greater<long long int>());
-    sort(b, b + m, greater<long long int>());
+  sort(a, a + n, greater<int>());
+    sort(b, b + m, greater<int>());
 
     for(j=0;j<n;j++){
         sum=sum+b[j];
     }
-
-
-long long int x=n-m;
-if(x>0){
-    for(j=0;j<x;j++){
+int x=n-m;
+ for(j=0;j<x;j++){
         sum=sum+a[j];
     }
-}
-
 
 cout<<sum<<"\n";
 
 }
 
 
- int main()
+int main()
 {
 
- long long int t;
+ int t;
     cin>>t;
 
 
