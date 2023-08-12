@@ -9,13 +9,35 @@ typedef long double ld;
 typedef pair<int, int> pii;
 typedef vector<vector<int>> vii;
 
-/*****User defined function*****/
 
 void module() {
 
+int n;
+
+cin>>n;
+string s;
+
+cin>>s;
+int add=0;
+int remove=0;
+int firstRemove =0;
+
+bool isNeg=true;
+
+for(i=0;i<n;i++){
+    if(s[i]=='+'){
+        add++;
+    }
+    else{
+        remove++;
+    }
 }
 
-/*****main function*****/
+int total = add-remove;
+
+int ans = min(n+total+remove, 0+total+remove);
+}
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
