@@ -53,6 +53,7 @@ int main() {
         addEdge(from, to);
     }
 
+
     if (isCyclic(vertices)) {
         cout << "The graph contains a cycle." << endl;
     } else {
