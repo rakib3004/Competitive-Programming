@@ -12,8 +12,6 @@ void addEdge(int u, int v)
 
 }
 
-
-
 void breathFirstSearch(int startingPoint)
 {
     queue<int> bfsQueue;
@@ -21,6 +19,7 @@ void breathFirstSearch(int startingPoint)
     bfsQueue.push(startingPoint);
     isVisited[startingPoint] = true;
 
+    cout<<startingPoint<<" ";
     while(!bfsQueue.empty())
     {
 
@@ -30,11 +29,12 @@ void breathFirstSearch(int startingPoint)
 
         for(int neigbourPoint: graph[currentPoint])
         {
-            if(isVisited[neigbourPoint]==false){
+            if(isVisited[neigbourPoint]==false)
+            {
                 bfsQueue.push(neigbourPoint);
                 isVisited[neigbourPoint]=true;
             }
-  cout<<neigbourPoint<<"at "<<currentPoint<<"\n";
+            cout<<neigbourPoint<<" ";
 
         }
 
@@ -42,16 +42,22 @@ void breathFirstSearch(int startingPoint)
 
 }
 
-void depthFirstSearch(int startingPoint){
-isVisited[startingPoint] =  true;
+void depthFirstSearch(int currentPoint)
+{
+    cout<<currentPoint<<" ";
+    isVisited[currentPoint] =  true;
 
-for(int neigbourPoint: graph[startingPoint]){
-    if(!isVisited[neigbourPoint]){
-        depthFirstSearch(neigbourPoint);
-        isVisited[neigbourPoint]=true;
+    for(int neigbourPoint: graph[currentPoint])
+    {
+        if(!isVisited[neigbourPoint])
+        {
+            isVisited[neigbourPoint]=true;
+
+
+            depthFirstSearch(neigbourPoint);
+        }
+
     }
-
-}
 
 }
 
@@ -74,8 +80,39 @@ int main()
 
     }
 
+   cout << "Graph:" << endl;
+    for (int i = 0; i < nodes; i++) {
+        cout << "Node " << i << " -> ";
+        for (int neighbor : graph[i]) {
+            cout << neighbor << " ";
+        }
+        cout << endl;
+    }
     int startingPoint = 0;
     breathFirstSearch(startingPoint);
-
+    //depthFirstSearch(startingPoint);
 
 }
+
+/*
+
+4 6
+0 1
+1 2
+1 3
+3 4
+3 5
+3 6
+*/
+
+/*
+9 8
+0 5
+0 7
+5 8
+8 6
+8 2
+2 3
+5 4
+5 1
+*/
