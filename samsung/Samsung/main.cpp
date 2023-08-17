@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
   int dp[500][500];
 int maxcoins(int A[],int siz)
