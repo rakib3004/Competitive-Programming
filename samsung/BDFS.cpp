@@ -89,8 +89,8 @@ int main()
         cout << endl;
     }
     int startingPoint = 0;
-    breathFirstSearch(startingPoint);
-    //depthFirstSearch(startingPoint);
+    //breathFirstSearch(startingPoint);
+    depthFirstSearch(startingPoint);
 
 }
 
@@ -107,8 +107,8 @@ int main()
 
 /*
 9 8
-0 5
 0 7
+0 5
 5 8
 8 6
 8 2
