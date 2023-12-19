@@ -1,4 +1,3 @@
-// C++ program burst balloon problem
 #include <iostream>
 using namespace std;
 int a[20];
