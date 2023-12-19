@@ -13,18 +13,18 @@ void dfs(int i, int j) {
 		f = 1;
 		return;
 	}
-	if(j+1<m && (a[i][j+1]==1 || a[i][j+1]==3) && !v[i][j+1]) {
+	if(j+1<m && (a[i][j+1]==1 || a[i][j+1]==3) && v[i][j+1]==0) {
 		dfs(i, j+1);
 	}
 	if(j-1>=0 && (a[i][j-1]==1 || a[i][j-1]==3) && v[i][j-1]==0)
 		dfs(i, j-1);
 	int h = 1;
 	for(h=1;h<=l;h++)
-		if(h<=l && i-h>=0 && (a[i-h][j]==1 || a[i-h][j]==3) && !v[i-h][j]) {
+		if(h<=l && i-h>=0 && (a[i-h][j]==1 || a[i-h][j]==3) && v[i-h][j]==0) {
 			dfs(i-h, j);
 		}
 	for(h = 1;h<=l;h++)
-		if(h<=l && i+h<n && (a[i+h][j]==1 || a[i+h][j]==3) && !v[i+h][j]) {
+		if(h<=l && i+h<n && (a[i+h][j]==1 || a[i+h][j]==3) && v[i+h][j]==0) {
 			dfs(i+h, j);
 		}
 }
@@ -34,8 +34,8 @@ int main() {
 		for(int j=0;j<m;j++)
 			cin>>a[i][j];
 	for(l=0;l<n;l++) {
-		for(int i=0;i<15;i++)
-			for(int j=0;j<15;j++)
+		for(int i=0;i<n;i++)
+			for(int j=0;j<m;j++)
 				v[i][j] = 0;
 		f = 0;
 		dfs(n-1, 0);
